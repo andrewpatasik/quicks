@@ -3,7 +3,7 @@ function App() {
 
   return (
     <>
-      <p className="text-rose-600">
+      <p>
         Hello Quicks!
       </p>
     </>
