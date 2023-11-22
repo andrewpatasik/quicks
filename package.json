@@ -1,0 +1,16 @@
+{
+  "name": "quicks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"yarn workspace @quicks/api start\" \"yarn workspace @quicks/ui dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
