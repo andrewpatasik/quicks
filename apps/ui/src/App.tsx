@@ -1,12 +1,12 @@
+import Home from "./pages/Home"
+import { Layout } from "./pages/Layout"
 
 function App() {
 
   return (
-    <>
-      <p>
-        Hello Quicks!
-      </p>
-    </>
+    <Layout>
+      <Home />
+    </Layout>
   )
 }
 
