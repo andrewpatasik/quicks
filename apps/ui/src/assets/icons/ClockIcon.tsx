@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-const ClockIcon: FC<SVGSVGElement> = () => {
+const ClockIcon: FC = () => {
   return (
     <svg
       width="31"

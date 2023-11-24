@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-const StarIcon: FC<SVGSVGElement> = () => {
+const StarIcon: FC = () => {
   return (
     <svg
       width="26"

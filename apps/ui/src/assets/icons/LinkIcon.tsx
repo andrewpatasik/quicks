@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-const LinkIcon:FC<SVGSVGElement> = () => {
+const LinkIcon:FC = () => {
   return (
     <svg
       width="26"

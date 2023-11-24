@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-const CloseIcon: FC<SVGSVGElement> = () => {
+const CloseIcon: FC = () => {
   return (
     <svg
       width="21"

@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-const BookmarkIcon: FC<SVGSVGElement> = () => {
+const BookmarkIcon: FC = () => {
   return (
     <svg
       width="29"

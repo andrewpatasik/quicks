@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-const BriefcaseIcon: FC<SVGSVGElement> = () => {
+const BriefcaseIcon: FC = () => {
   return (
     <svg
       width="32"
