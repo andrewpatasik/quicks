@@ -14,18 +14,18 @@ interface UseQuickTabValue {
 }
 
 export const QuickTabProvider: FC<UseQuickTabValue> = ({ children }) => {
-  const [tabOrder, setTabOrder] = useState(["quick", "task", "inbox"]);
+  const [tabOrder, setTabOrder] = useState(["task", "inbox"]);
   const [activeTab, setActiveTab] = useState("quick");
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const tabIndex = tabOrder.indexOf(activeTab);
+      const tabIndex = tabOrder.indexOf(activeTab);
 
-    const newOrder = [...tabOrder];
+      const newOrder = [...tabOrder];
+      const selectedTab = newOrder.splice(tabIndex, 1)[0];
+      newOrder.splice(tabIndex + 1, 0, selectedTab);
 
-    [newOrder[0], newOrder[tabIndex]] = [newOrder[tabIndex], newOrder[0]];
-
-    setTabOrder(newOrder);
+      setTabOrder(newOrder);
   }, [activeTab]);
 
   return (

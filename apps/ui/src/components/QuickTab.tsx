@@ -7,32 +7,35 @@ const QuickTab: FC = () => {
   const { tabOrder, activeTab, isOpen } = useQuickTab();
 
   return (
-    <nav className="flex flex-row-reverse absolute right-4 bottom-4">
+    <nav className="flex flex-row-reverse absolute right-6 bottom-6">
       <div
         className={cn(
-          "mx-4",
-          isOpen && activeTab !== "quick" && "absolute z-10"
+          "ml-7 relative",
+          isOpen && activeTab !== "quick" && "right-4"
         )}
       >
-        <QuickButton type={activeTab} variants="active" />
+        <QuickButton type="quick" variants={activeTab === "quick" ? "active" : "idle"} />
       </div>
 
       <ul
         className={cn(
-          "flex space-x-4",
-          isOpen && activeTab !== "quick" && "relative right-7 z-0",
+          "flex",
+          isOpen && activeTab !== "quick" && "absolute z-10",
           !isOpen && "hidden"
         )}
       >
         {[...tabOrder]
-          .slice(1)
           .map(
             (
-              item: "task" | "inbox" | "quick",
+              item: "task" | "inbox",
               index: Key | null | undefined
             ) => (
               <li key={index}>
-                <QuickButton type={item} variants="idle" />
+                <QuickButton
+                  type={item}
+                  variants={activeTab === item ? "active" : "idle"}
+                  className="ml-7"
+                />
               </li>
             )
           )}

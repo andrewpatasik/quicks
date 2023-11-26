@@ -9,7 +9,7 @@ const Home: FC = () => {
   return (
     <div className="flex h-full">
       <Sidebar className="shrink-0" />
-      <main className="w-full bg-[#333333]">
+      <main className="relative w-full bg-[#333333]">
         <Searchbar />
         <QuickTab
         />
