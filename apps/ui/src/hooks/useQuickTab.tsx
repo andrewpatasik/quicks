@@ -19,13 +19,12 @@ export const QuickTabProvider: FC<UseQuickTabValue> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-      const tabIndex = tabOrder.indexOf(activeTab);
+    const tabIndex = tabOrder.indexOf(activeTab);
+    const newOrder = [...tabOrder];
+    const selectedTab = newOrder.splice(tabIndex, 1)[0];
+    newOrder.splice(tabIndex + 1, 0, selectedTab);
 
-      const newOrder = [...tabOrder];
-      const selectedTab = newOrder.splice(tabIndex, 1)[0];
-      newOrder.splice(tabIndex + 1, 0, selectedTab);
-
-      setTabOrder(newOrder);
+    setTabOrder(newOrder);
   }, [activeTab]);
 
   return (
