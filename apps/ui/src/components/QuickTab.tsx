@@ -10,7 +10,7 @@ const QuickTab: FC = () => {
     <nav className="flex flex-row-reverse absolute right-8 bottom-7 z-10">
       <div
         className={cn(
-          "ml-7 pointer-events-auto",
+          "ml-7",
           isOpen && activeTab !== "quick" && "absolute right-4 z-0"
         )}
       >
@@ -33,7 +33,6 @@ const QuickTab: FC = () => {
               key={index}
               className={cn(
                 "ml-7",
-                isOpen && activeTab === item && "pointer-events-none"
               )}
             >
               <QuickButton

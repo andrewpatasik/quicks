@@ -6,6 +6,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const QuickTabContext = createContext<any>(null);
 
@@ -15,8 +16,12 @@ interface UseQuickTabValue {
 
 export const QuickTabProvider: FC<UseQuickTabValue> = ({ children }) => {
   const [tabOrder, setTabOrder] = useState(["task", "inbox"]);
-  const [activeTab, setActiveTab] = useState("quick");
   const [isOpen, setIsOpen] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const activeTab = searchParams.get("tab") || "quick";
+  const setSelectedActiveTab = (string: string) =>
+    setSearchParams(`tab=${string}`);
 
   useEffect(() => {
     const tabIndex = tabOrder.indexOf(activeTab);
@@ -27,9 +32,13 @@ export const QuickTabProvider: FC<UseQuickTabValue> = ({ children }) => {
     setTabOrder(newOrder);
   }, [activeTab]);
 
+  useEffect(() => {
+    if (activeTab !== "quick") setIsOpen(true);
+  }, [isOpen]);
+
   return (
     <QuickTabContext.Provider
-      value={{ tabOrder, activeTab, setActiveTab, isOpen, setIsOpen }}
+      value={{ tabOrder, activeTab, setSelectedActiveTab, isOpen, setIsOpen }}
     >
       {children}
     </QuickTabContext.Provider>

@@ -44,20 +44,16 @@ const buttonIcon = {
   },
 };
 
-const QuickButton: FC<QuickButtonValue> = ({
-  type,
-  variants,
-  className,
-}) => {
-  const { setActiveTab, isOpen, setIsOpen } = useQuickTab();
+const QuickButton: FC<QuickButtonValue> = ({ type, variants, className }) => {
+  const { setSelectedActiveTab, isOpen, setIsOpen } = useQuickTab();
 
-  const onClickButton = (type:any) => {
-    setActiveTab(type)
-
-    if (type === 'quick') {
-      setIsOpen(!isOpen)
+  const onClickButton = (type: any) => {
+    if (type === "quick") {
+      setIsOpen(!isOpen);
     }
-  }
+
+    setSelectedActiveTab(type);
+  };
 
   return (
     <button
