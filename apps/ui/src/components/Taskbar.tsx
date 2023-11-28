@@ -1,11 +1,10 @@
 import { ChangeEvent, FC } from "react";
 
 interface TaskbarProps {
-  selectedTask: string;
   selectedTaskOnChange: any;
 }
 
-const Taskbar: FC<TaskbarProps> = ({ selectedTask, selectedTaskOnChange }) => {
+const Taskbar: FC<TaskbarProps> = ({ selectedTaskOnChange }) => {
   const taskbarOnChange = (e: ChangeEvent<HTMLSelectElement>, selectedTaskOnChange: (arg0: string) => void) => {
     selectedTaskOnChange(e.target.value);
   };
@@ -14,7 +13,7 @@ const Taskbar: FC<TaskbarProps> = ({ selectedTask, selectedTaskOnChange }) => {
     <div className="flex justify-between">
       <div>
         <select
-          value={selectedTask}
+          value={"all"}
           onChange={(e) => taskbarOnChange(e, selectedTaskOnChange)}
           className="border border-primary-gray-dark rounded-md p-2"
         >
@@ -24,6 +23,9 @@ const Taskbar: FC<TaskbarProps> = ({ selectedTask, selectedTaskOnChange }) => {
           <option value="personal">Personal Errands</option>
           <option value="urgent">Urgent To-Do</option>
         </select>
+      </div>
+      <div>
+        <button className="rounded-md py-2 px-4 bg-primary-blue text-white">New Task</button>
       </div>
     </div>
   );

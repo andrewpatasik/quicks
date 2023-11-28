@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "New task 1",
+    "body": "lorem ipsum dolor sit amet (personal)",
+    "due_date": "14-12-2023",
+    "category": "personal"
+  },
+  {
+    "id": 2,
+    "title": "New task 2",
+    "body": "lorem ipsum dolor sit amet (personal)",
+    "due_date": "14-12-2023",
+    "category": "personal"
+  },
+  {
+    "id": 3,
+    "title": "New task 3",
+    "body": "lorem ipsum dolor sit amet (urgent)",
+    "due_date": "14-12-2023",
+    "category": "urgent"
+  }
+]
