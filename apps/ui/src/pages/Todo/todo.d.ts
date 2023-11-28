@@ -3,5 +3,6 @@ export type TodoValue = {
     title: string,
     body: string,
     due_date: string,
-    category: string 
+    category: string,
+    checked: boolean
 }

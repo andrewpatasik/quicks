@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import todo from "../../data/todo.json";
 import { TodoValue } from "./todo";
+import TodoCard from "./TodoCard";
 
 interface TodoListProps {
   selectedTask: string;
@@ -27,7 +28,16 @@ const TodoList: FC<TodoListProps> = ({ selectedTask }) => {
   const renderTodoTask = () => {
     let tasks = filterTodoList(todoList);
 
-    return tasks.map((task, index) => <div key={index}>{task.body}</div>);
+    return tasks.map((task, index) => (
+      <TodoCard
+        id={task.id}
+        title={task.title}
+        body={task.body}
+        category={task.category}
+        checked={task.checked}
+        due_date={task.due_date}
+      />
+    ));
   };
 
   return (

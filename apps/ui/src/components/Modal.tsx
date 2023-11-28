@@ -34,7 +34,7 @@ const Modal: FC = () => {
   return (
     <div
       className={cn(
-        "absolute bg-white w-[45.75rem] h-4/6 right-8 bottom-28 rounded-[.26rem] p-5",
+        "absolute bg-white w-[45.75rem] h-4/6 right-8 bottom-28 rounded-[.26rem] py-5 px-6",
         !isModalOpen && "hidden"
       )}
     >
