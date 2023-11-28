@@ -1,4 +1,4 @@
-import { FC, ReactElement, Suspense, lazy, useEffect, useState } from "react";
+import { FC, Suspense, lazy, useEffect, useState } from "react";
 import { cn } from "../utils";
 import { useQuickTab } from "../hooks/useQuickTab";
 

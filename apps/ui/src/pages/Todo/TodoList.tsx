@@ -28,7 +28,7 @@ const TodoList: FC<TodoListProps> = ({ selectedTask }) => {
   const renderTodoTask = () => {
     let tasks = filterTodoList(todoList);
 
-    return tasks.map((task, index) => (
+    return tasks.map((task) => (
       <TodoCard
         id={task.id}
         title={task.title}
